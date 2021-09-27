@@ -1,0 +1,28 @@
+package java8.javanashorn10;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+public class ClientTest {
+
+	public static void main(String[] args) {  
+        // Creating script engine  
+        //ScriptEngine ee = new ScriptEngineManager().getEngineByName("Nashorn");  
+        // Reading Nashorn file  
+        //ee.eval(new FileReader("H:\\Java8_Workspace\\Java_8\\src\\java8\\jsnashorn10\\hello.js"));
+        ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
+        ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("nashorn");
+        
+        try {
+			//scriptEngine.eval(new FileReader("H:\\Java8_Workspace\\Java_8\\src\\java8\\jsnashorn10\\hello.js"));
+        	scriptEngine.eval(new FileReader("src\\java8\\jsnashorn10\\hello.js"));
+		} catch (FileNotFoundException | ScriptException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+}

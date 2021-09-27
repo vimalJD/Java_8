@@ -1,0 +1,52 @@
+package java8.predicate.filter;
+
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+import java8.predicate.filter.model.Employee;
+
+
+/*
+ An essentially we can use stream and predicate to –
+ first filter certain elements from a group, and
+ then perform some operation on filtered elements.
+ */
+public class EmployeePredicates {
+	
+	//1. All Employees who are male and age more than 21
+	public static Predicate<Employee> isAdultMale() 
+	{
+	    return p -> p.getAge() > 21 && p.getGender().equalsIgnoreCase("M");
+	}
+	//2. All Employees who are female and age more than 18
+	public static Predicate<Employee> isAdultFemale() 
+	{
+	    return p -> p.getAge() > 18 && p.getGender().equalsIgnoreCase("F");
+	}
+	
+	//3. All Employees whose age is more than a given age
+     
+    public static Predicate<Employee> isAgeMoreThan(Integer age) {
+        return p -> p.getAge() > age;
+    }
+     
+    public static List<Employee> filterEmployees (List<Employee> employees, 
+                                                Predicate<Employee> predicate) 
+    {
+        return employees.stream()
+                    .filter( predicate )
+                    .collect(Collectors.<Employee>toList());
+    }
+    /*
+    AS We see I have created another utility method filterEmployees() 
+    to show java predicate filter. It is basically to make code clean and 
+    less repetitive. You can also write more than one predicates 
+    to make predicate chain, as we do in builder pattern.
+
+    So, in this function we pass the list of employees 
+    and we pass a predicate, then this function will return 
+    a new collection of employees satisfying the condition mentioned 
+    in parameter predicate.
+	*/
+}

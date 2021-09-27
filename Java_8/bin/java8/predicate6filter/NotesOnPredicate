@@ -1,0 +1,7 @@
+Final Thoughts on Predicates in Java 8
+
+    They move your conditions (sometimes business logic) to a central place. This helps in unit-testing them separately.
+    Any change need not be duplicated into multiple places. Java predicate improves code maintenance.
+    The code e.g. “filterEmployees(employees, isAdultFemale())” is very much readable than writing a if-else block.
+
+Well, those are my thoughts in Java 8 predicates. What do you think of this feature? Share with all of us in the comments section.

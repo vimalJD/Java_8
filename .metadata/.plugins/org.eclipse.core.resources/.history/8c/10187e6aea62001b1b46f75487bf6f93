@@ -1,0 +1,5 @@
+package java8.stream.api.model;
+
+public class Product {
+
+}

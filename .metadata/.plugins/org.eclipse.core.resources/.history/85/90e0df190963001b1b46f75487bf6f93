@@ -1,0 +1,23 @@
+package java8.stream.filters.map;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class FilterMapByBothKeysAndValues {
+
+	public static void main(String[] args) {
+	      Map<Integer, String> hmap = new HashMap<Integer, String>();
+	      hmap.put(1, "ABC");
+	      hmap.put(2, "XCB");
+	      hmap.put(3, "ABB");
+	      hmap.put(4, "ZIO");
+
+	      Map<Integer, String> result = hmap.entrySet()
+	         .stream()
+	         .filter(p -> p.getKey().intValue() <= 2) //filter by key
+	         .filter(map -> map.getValue().startsWith("A")) //filter by value
+	         .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+
+	     System.out.println("Result: " + result);
+	   }
+}

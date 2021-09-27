@@ -1,0 +1,28 @@
+package java8.parallel.stream;
+
+/*
+ Parallel Data Processing in Java | Set 1
+
+ Last Updated : 02 Nov, 2017
+
+We know that new Stream in Java (introduced in Java 8) 
+interface let us manipulate collections of data in a declarative way.
+In this topic, we will discover how the Stream interface gives 
+us the opportunity to execute operations in parallel on a collection 
+of data without much effort. It lets us declaratively 
+turn a sequential stream into a parallel one
+
+Definition and Making into Parallel Streams:
+A parallel stream is one that splits the elements 
+into multiple streams and assigns them into multiple 
+chunks on different threads. Thus we can divide the workload 
+of a given operation on the core of multiprocessors and thus 
+it will make the CPU busy. We can convert the stream into 
+parallel by attaching the keyword ‘parallel’.
+
+Following example just gives us the idea how we can convert a stream into a parallel one!
+ */
+
+public class ParallelDataProcessing {
+
+}

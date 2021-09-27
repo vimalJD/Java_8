@@ -1,0 +1,14 @@
+package java8.stream.api;
+
+/*
+Java Example: Filtering Collection without using Stream
+
+In the following example, 
+we are filtering data without using stream. 
+This approach we are used before the stream package was released.
+*/
+public class FilteringCollectionWithoutStream {
+
+	
+	
+}

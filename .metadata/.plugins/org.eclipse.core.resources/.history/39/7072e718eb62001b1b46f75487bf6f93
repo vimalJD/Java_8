@@ -1,0 +1,48 @@
+package java8.stream.api;
+
+import java.util.*;
+
+
+/*
+Java Example: Filtering Collection without using Stream
+
+In the following example, 
+we are filtering data without using stream. 
+This approach we are used before the stream package was released.
+*/
+
+class Product_4{  
+    int id;  
+    String name;  
+    float price;  
+    public Product_4(int id, String name, float price) {  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+
+
+public class FilteringCollectionWithoutStream {
+
+	public static void main(String[] args) {  
+        List<Product_3> productsList = new ArrayList<Product_3>();  
+        //Adding Products  
+        productsList.add(new Product_3(1,"HP Laptop",25000f));  
+        productsList.add(new Product_3(2,"Dell Laptop",30000f));  
+        productsList.add(new Product_3(3,"Lenevo Laptop",28000f));  
+        productsList.add(new Product_3(4,"Sony Laptop",28000f));  
+        productsList.add(new Product_3(5,"Apple Laptop",90000f));  
+        List<Float> productPriceList = new ArrayList<Float>();  
+        for(Product_3 product: productsList){  
+              
+            // filtering data of list  
+            if(product.price<30000){  
+                productPriceList.add(product.price);    // adding price to a productPriceList  
+            }  
+        }  
+        System.out.println(productPriceList);   // displaying data  
+    }
+	
+	
+}

@@ -1,0 +1,6 @@
+package java8.stream.filters.nullvalues;
+
+public class FilterNullValuesFromStream {
+
+	
+}

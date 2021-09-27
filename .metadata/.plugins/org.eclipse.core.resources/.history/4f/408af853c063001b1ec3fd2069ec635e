@@ -1,0 +1,5 @@
+package java8.type12inference;
+
+public class TypeInferenceExample2 {
+
+}

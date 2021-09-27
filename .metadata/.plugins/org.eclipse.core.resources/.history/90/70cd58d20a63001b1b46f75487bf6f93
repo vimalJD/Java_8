@@ -1,0 +1,13 @@
+package java8.stream.filters.nullvalues;
+
+/*
+ Java 8 Example: Filter null values from a stream
+
+We can use lambda expression str -> str!=null
+inside stream filter() to filter out null values from a stream.
+ */
+
+public class FilterNullValuesFromStream {
+
+	
+}

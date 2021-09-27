@@ -1,0 +1,35 @@
+package java8.predicate.filter;
+
+import java.util.function.Predicate;
+
+import java8.predicate.filter.model.Employee;
+
+
+/*
+ An essentially we can use stream and predicate to –
+ first filter certain elements from a group, and
+ then perform some operation on filtered elements.
+ */
+public class EmployeePredicates {
+
+	public static Predicate<Employee> isAdultMale() {
+        return p -> p.getAge() > 21 && p.getGender().equalsIgnoreCase("M");
+    }
+     
+    public static Predicate<Employee> isAdultFemale() {
+        return p -> p.getAge() > 18 && p.getGender().equalsIgnoreCase("F");
+    }
+     
+    public static Predicate<Employee> isAgeMoreThan(Integer age) {
+        return p -> p.getAge() > age;
+    }
+     
+    public static List<Employee> filterEmployees (List<Employee> employees, 
+                                                Predicate<Employee> predicate) 
+    {
+        return employees.stream()
+                    .filter( predicate )
+                    .collect(Collectors.<Employee>toList());
+    }
+	
+}

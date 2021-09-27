@@ -1,0 +1,5 @@
+package java8.predicate.filter.chained.predicates;
+
+public class PredicateAndMethod {
+
+}

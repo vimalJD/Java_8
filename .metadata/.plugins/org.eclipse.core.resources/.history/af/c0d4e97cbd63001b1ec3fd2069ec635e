@@ -1,0 +1,5 @@
+package java8.option11class;
+
+public class OptionalValueIsPresent {
+
+}

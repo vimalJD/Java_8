@@ -1,0 +1,48 @@
+package java8.stream.api;
+import java.util.*;
+
+/*
+Java Stream Example : reduce() Method in Collection
+
+This method takes a sequence of input elements and combines them into a single summary result by repeated operation.
+For example, finding the sum of numbers, or accumulating elements into a list.
+
+In the following example, we are using reduce() method, which is used to sum of all the product prices.
+*/
+      
+class Product_3{  
+        int id;  
+        String name;  
+        float price;  
+        public Product_3(int id, String name, float price) {  
+            this.id = id;  
+            this.name = name;  
+            this.price = price;  
+        }  
+}  
+      
+
+public class StreamReduceMethodInCollection {
+
+	public static void main(String[] args) {  
+        List<Product_3> productsList = new ArrayList<Product_3>();  
+        //Adding Products  
+        productsList.add(new Product_3(1,"HP Laptop",25000f));  
+        productsList.add(new Product_3(2,"Dell Laptop",30000f));  
+        productsList.add(new Product_3(3,"Lenevo Laptop",28000f));  
+        productsList.add(new Product_3(4,"Sony Laptop",28000f));  
+        productsList.add(new Product_3(5,"Apple Laptop",90000f));  
+        // This is more compact approach for filtering data  
+        Float totalPrice = productsList.stream()  
+                    .map(product->product.price)  
+                    .reduce(0.0f,(sum, price)->sum+price);   // accumulating price  
+        System.out.println(totalPrice);  
+        // More precise code   
+        float totalPrice2 = productsList.stream()  
+                .map(product->product.price)  
+                .reduce(0.0f,Float::sum);   // accumulating price, by referring method of Float class  
+        System.out.println(totalPrice2);  
+          
+    }
+	
+}
